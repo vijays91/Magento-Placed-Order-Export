@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Learn_Placeorderexport>
+            <version>1.0.0</version>
+        </Learn_Placeorderexport>
+    </modules> 
+    <global>
+        <blocks>
+            <placeorderexport>
+                <class>Learn_Placeorderexport_Block</class>
+            </placeorderexport>
+        </blocks>
+        <helpers>
+            <placeorderexport>
+                <class>Learn_Placeorderexport_Helper</class>
+            </placeorderexport>
+        </helpers>
+		<!-- Initialize the Model class -->
+		<models>
+            <placeorderexport>
+                <class>Learn_Placeorderexport_Model</class>
+            </placeorderexport>
+        </models>
+		
+		<events>
+			<sales_order_place_after>
+				<observers>
+					<placeorderexport>
+						<type>singleton</type>
+						<class>placeorderexport/observer</class>
+						<method>exportOrder</method>
+					</placeorderexport>
+				</observers>
+			</sales_order_place_after>
+		</events>
+    </global>
+	
+	<default>
+		<placeorderexport_tab>
+			<placeorderexport_setting>
+				<placeorderexport_active>1</placeorderexport_active>
+				<placeorderexport_path>var/export/place_order</placeorderexport_path>
+				<placeorderexport_type>csv</placeorderexport_type>
+				<placeorderexport_pname>order_export</placeorderexport_pname>
+			</placeorderexport_setting>
+		</placeorderexport_tab>
+	</default>	
+</config>

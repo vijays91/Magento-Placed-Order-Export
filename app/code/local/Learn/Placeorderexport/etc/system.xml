@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <myconf_vijaystore translate="label" module="placeorderexport">
+            <label>Vijay</label>
+            <sort_order>100</sort_order>
+        </myconf_vijaystore>
+    </tabs>	
+	
+    <sections>
+        <placeorderexport_tab translate="label" module="placeorderexport">
+            <label>Place Order Export Setting</label>
+            <tab>myconf_vijaystore</tab>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <placeorderexport_setting translate="label comment">
+                    <label>Place Order Export Setting</label>
+                    <sort_order>503</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                      <placeorderexport_active translate="label comment">
+                            <label>Place Order Export</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </placeorderexport_active>
+						<placeorderexport_path translate="label comment">
+                            <label>Place Order Export Path (After Root Folder)</label>
+							<frontend_type>text</frontend_type>
+							<validate>required-entry</validate>
+							<comment>Like path (export/place/orders/)</comment>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </placeorderexport_path>
+						<placeorderexport_pname translate="label comment">
+                            <label>Place Order Export Prefix Name</label>
+							<frontend_type>text</frontend_type>
+							<validate>required-entry</validate>
+							<comment>Prefix text of export order data</comment>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </placeorderexport_pname>
+						<placeorderexport_type translate="label comment">
+                            <label>Place Order Export Type</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>placeorderexport/dropdown_type</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </placeorderexport_type>
+                     </fields>
+                </placeorderexport_setting>		
+            </groups>
+        </placeorderexport_tab>
+    </sections>
+</config>
